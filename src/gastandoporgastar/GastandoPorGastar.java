@@ -1,8 +1,6 @@
 
 package gastandoporgastar;
 
-import java.awt.BorderLayout;
-
 
 public class GastandoPorGastar {
 
