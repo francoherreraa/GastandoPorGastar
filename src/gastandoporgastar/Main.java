@@ -19,7 +19,6 @@ public class Main {
 //            System.out.println("2- Cargar productos predeterminados");
 //            System.out.println("3- Buscar producto en base a presupuesto");
 //            System.out.println("4- Mostrar camino");
-//            System.out.println("5- Mostrar camino");
 //            System.out.println("");
 //            System.out.println("Ingrese una opcion: ");
 //            num = sc.nextInt();
@@ -37,7 +36,6 @@ public class Main {
 //        a.insertar(500);
 //            }
 //        }while(num !=0);
-        
         a.insertar(290);
         a.insertar(180);
         a.insertar(100);
