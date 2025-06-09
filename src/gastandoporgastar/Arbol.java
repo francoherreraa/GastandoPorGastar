@@ -88,6 +88,7 @@ public class Arbol {
 
         }
         System.out.println("Valor mas cercano: " + masCercano);
+        System.out.println("");
 
         System.out.println("Camino recorrido:");
         for (int valor : camino) {
