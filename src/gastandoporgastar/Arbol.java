@@ -23,7 +23,7 @@ public class Arbol {
     
     public void preOrden(Nodo nodo){
         if(nodo == null){
-            return; //terminar recursividad
+            return; 
         }else{
             System.out.println(nodo.getValor());
             preOrden(nodo.getNodoIzq());
@@ -38,7 +38,7 @@ public class Arbol {
     
     public void inOrden(Nodo nodo){
         if(nodo == null){
-            return; //terminar recursividad
+            return; 
         }else{
             inOrden(nodo.getNodoIzq());
             System.out.println(nodo.getValor());
@@ -47,16 +47,40 @@ public class Arbol {
     }
     
     public void recorrerPostOrden(){
-        
+        this.postOrden(inicial);
     }
     
     public void postOrden(Nodo nodo){
         if(nodo == null){
-            return; //terminar recursividad
+            return; 
         }else{
             inOrden(nodo.getNodoIzq());
             inOrden(nodo.getNodoDer());
             System.out.println(nodo.getValor());
         }
+    }
+    
+    
+    public void buscarMasCercano(int presupuesto){
+        Nodo actual = inicial;
+        int masCercano = actual.getValor();
+        int diferenciaMinima = Math.abs(actual.getValor() - presupuesto);
+        
+        while (actual != null) {
+            int diferencia = Math.abs(actual.getValor() - presupuesto);
+            if (diferencia < diferenciaMinima) {
+                diferenciaMinima = diferencia;
+                masCercano = actual.getValor();
+            }
+
+            if (presupuesto < actual.getValor())
+                actual = actual.getNodoIzq();
+            else if (presupuesto > actual.getValor())
+                actual = actual.getNodoDer();
+            else
+                break;
+
+        } 
+        System.out.println("Valor mas cercano: "+masCercano);
     }
 }
