@@ -1,13 +1,16 @@
 package gastandoporgastar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Arbol {
 
     Nodo inicial;
+    private List<Integer> caminoRecorrido;
 
     public Arbol() {
         this.inicial = null;
+        this.caminoRecorrido = new ArrayList<>();
     }
 
     public void insertar(int valor) {
@@ -54,8 +57,8 @@ public class Arbol {
         if (nodo == null) {
             return;
         } else {
-            inOrden(nodo.getNodoIzq());
-            inOrden(nodo.getNodoDer());
+            postOrden(nodo.getNodoIzq());
+            postOrden(nodo.getNodoDer());
             System.out.println(nodo.getValor());
         }
     }
@@ -65,13 +68,14 @@ public class Arbol {
             System.out.println("El árbol está vacío. No hay precios cargados ");
             return;
         }
+        caminoRecorrido.clear();
+
         Nodo actual = inicial;
         int masCercano = actual.getValor();
         int diferenciaMinima = Math.abs(actual.getValor() - presupuesto);
-        ArrayList<Integer> camino = new ArrayList<>();
 
         while (actual != null) {
-            camino.add(actual.getValor());
+            caminoRecorrido.add(actual.getValor());
             int diferencia = Math.abs(actual.getValor() - presupuesto);
             if (diferencia < diferenciaMinima) {
                 diferenciaMinima = diferencia;
@@ -89,10 +93,17 @@ public class Arbol {
         }
         System.out.println("Valor mas cercano: " + masCercano);
         System.out.println("");
+    }
 
+    public void mostrarCaminoRecorrido() {
+        if (caminoRecorrido.isEmpty()) {
+            System.out.println("Todavía no se realizó ninguna búsqueda.");
+            return;
+        }
         System.out.println("Camino recorrido:");
-        for (int valor : camino) {
-            System.out.print(valor + " ");
+        for (int valor : caminoRecorrido) {
+            System.out.print(valor + " " );
+              
         }
     }
 }
