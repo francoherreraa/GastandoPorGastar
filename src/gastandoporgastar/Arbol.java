@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Arbol {
-
+    
     Nodo inicial;
     private List<Integer> caminoRecorrido;
 
@@ -65,7 +65,7 @@ public class Arbol {
 
     public void buscarMasCercano(int presupuesto) {
         if (inicial == null) {
-            System.out.println("El árbol está vacío. No hay precios cargados ");
+            System.out.println("El arbol esta vacio. No hay precios cargados ");
             return;
         }
         caminoRecorrido.clear();

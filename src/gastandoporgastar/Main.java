@@ -16,13 +16,16 @@ public class Main {
             System.out.println("2- Cargar productos predeterminados");
             System.out.println("3- Buscar producto en base a presupuesto");
             System.out.println("4- Mostrar camino");
-            System.out.println("5- Mostrar productos en un orden especifico");
+            System.out.println("5- Mostrar el arbol en un orden especifico");
             System.out.println("0- Salir");
             System.out.println("");
             System.out.println("Ingrese una opcion: ");
             num = sc.nextInt();
 
             switch (num) {
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
                 case 1:
                     System.out.println("Ingrese un producto");
                     num = sc.nextInt();
@@ -32,7 +35,7 @@ public class Main {
 
                 case 2:
                     System.out.println("Los siguientes valores han sido insertados:");
-                    System.out.println("290, 180, 400, 100, 220, 310, 480, 230, 440, 500");
+                    System.out.println("290, 180, 400, 100, 220, 310, 480, 230, 440, 510");
                     System.out.println("");
                     a.insertar(290);
                     a.insertar(180);
@@ -43,7 +46,7 @@ public class Main {
                     a.insertar(310);
                     a.insertar(480);
                     a.insertar(440);
-                    a.insertar(500);
+                    a.insertar(510);
                     System.out.println("");
                     break;
 
@@ -68,25 +71,36 @@ public class Main {
                         case 1:
                             System.out.println("Recorrido Inorden");
                             a.recorrerInOrden();
+                            System.out.println("");
                             break;
 
                         case 2:
                             System.out.println("Recorrido Preorden");
                             a.recorrerPreOrden();
+                            System.out.println("");
                             break;
 
                         case 3:
                             System.out.println("Recorrido Postorden");
                             a.recorrerPostOrden();
+                            
                             break;
 
                         default:
                             System.out.println("Opcion invalida. Elija una opcion entre el 1 y el 3 ");
                     }
                     break;
+                
+                    
+                    
                 default:
                     System.out.println("Opcion invalida. Elija una opcion entre el 0 y el 5 ");
+                    System.out.println("");
+                break;    
+                    
             }
-        } while (num != 0);
+            
+        } while (num != 0);  
+        
     }
 }
